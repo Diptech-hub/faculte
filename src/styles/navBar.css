@@ -1,0 +1,39 @@
+.topBar {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 15px 60px 15px 60px;
+  background: #034cdd;
+  color: white;
+}
+
+.top-name {
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 29.3px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.body a {
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 29.3px;
+}
+
+.body button {
+  padding: 4px 8px 4px 8px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  margin-left: 30px;
+  color: #034cdd;
+  outline: none;
+}

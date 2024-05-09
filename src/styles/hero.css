@@ -1,0 +1,53 @@
+.top-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #034cdd;
+  color: white;
+  padding: 60px;
+}
+
+.top-hero .hero1 {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 0 50px 0 50px;
+}
+
+.top-hero .hero2 {
+  font-size: 12px;
+  font-weight: noraml;
+  /* line-height: 28px; */
+  letter-spacing: -0.10000000149011612px;
+  text-align: center;
+  padding: 30px 320px 30px 320px;
+}
+
+.hero-input {
+  display: flex;
+  align-items: center;
+}
+
+.input1 {
+  flex-grow: 1;
+  padding: 8px 120px 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+input::placeholder {
+  text-align: left;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: white;
+  color: #034cdd;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
