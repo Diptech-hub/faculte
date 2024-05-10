@@ -1,4 +1,5 @@
 import "../styles/hero.css";
+import Reactangle3 from "../assets/Rectangle3.png"
 
 const Hero: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const Hero: React.FC = () => {
         <input className="input1" type="text" placeholder="Search for courses" />
         <button>Search</button>
       </div>
+      <img src={Reactangle3} alt="rectangle3" />
     </div>
   );
 };
