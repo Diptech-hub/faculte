@@ -54,12 +54,13 @@ button {
 }
 
 .top-hero img {
-    width: 80%;
-height: 50%;
-border-radius: 20px;
-position: absolute;
-display: block;
-margin: auto;
-top: 450px;
-
+  /* width: 80%;
+height: 50%; */
+  width: 900px;
+  height: 300px;
+  border-radius: 20px;
+  position: absolute;
+  display: block;
+  margin: auto;
+  top: 450px;
 }

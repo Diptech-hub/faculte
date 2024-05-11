@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    margin-top: 80px;
+}
+
+.banner1, .banner2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* position: absolute; */
+}
+
+.banner1 {
+    background: #E29000;  
+    padding: 10px 60px 0 60px;
+    /* transform: rotate(-2.5deg); */
+}
+
+.banner1 p {
+font-size: 32px;
+font-weight: bold;
+line-height: 68px;
+letter-spacing: -0.02em;
+}
+
+.banner1 img, .banner2 img {
+    width: 32px;
+height: 32px;
+padding-top: 10px;
+}
+
+.banner2 {
+    background: black;  
+    padding: 10px 60px 0 60px;
+    /* transform: rotate(3deg); */
+    margin-top: -60px;
+}
+
+.banner2 p {
+    font-size: 32px;
+font-weight: bold;
+line-height: 68px;
+letter-spacing: -0.02em;
+color: white;
+}
+
+.banner2 .spec{
+    color: #E29000;
+}
