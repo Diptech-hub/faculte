@@ -1,15 +1,15 @@
 import { FC } from 'react';
 
 interface Props {
-  paragraph1: string;
-  paragraph2: string;
+  text1: string;
+  text2: string;
 }
 
-const Header: FC<Props> = ({ paragraph1, paragraph2 }) => {
+const Header: FC<Props> = ({ text1, text2 }) => {
   return (
     <div>
-      <p>{paragraph1}</p>
-      <p>{paragraph2}</p>
+      <p>{text1}</p>
+      <p>{text2}</p>
     </div>
   );
 };
