@@ -24,6 +24,8 @@
   font-size: 12px;
   font-weight: normal;
   line-height: 29.3px;
+  text-decoration: none;
+  color: white;
 }
 
 .body button {

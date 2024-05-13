@@ -2,6 +2,7 @@ import NavBar from "../components/navBar"
 import Hero from "../components/hero"
 import Banner from "../components/banner"
 import Footer from "../components/footer"
+import Tutor from "../components/tutor"
 
 const Home: React.FC = () => {
     return (
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
         <NavBar/>
         <Hero />
         <Banner />
+        <Tutor />
         <Footer />
       </div>
     );

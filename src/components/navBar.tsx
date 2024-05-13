@@ -7,11 +7,11 @@ const NavBar: React.FC = () => {
       <div className="topBar">
         <p className="top-name">Faculte</p>
         <div className="body">
-            <a>Categories</a>
-            <a>For Schools</a>
-            <a>Teach</a>
-            <a><LuShoppingCart /></a>
-            <a>Login</a>
+            <a href="">Categories</a>
+            <a href="">For Schools</a>
+            <a href="">Teach</a>
+            <a href=""><LuShoppingCart /></a>
+            <a href="">Login</a>
             <button>Signup</button>
         </div>
       </div>
