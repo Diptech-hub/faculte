@@ -28,7 +28,7 @@
   color: white;
 }
 
-.body button {
+.signup {
   padding: 4px 8px 4px 8px;
   font-size: 12px;
   font-weight: normal;
@@ -36,6 +36,7 @@
   letter-spacing: -0.10000000149011612px;
   text-align: left;
   margin-left: 30px;
+  background: white;
   color: #034cdd;
   outline: none;
 }

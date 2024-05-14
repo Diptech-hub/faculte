@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
             <a href="">Teach</a>
             <a href=""><LuShoppingCart /></a>
             <a href="">Login</a>
-            <button>Signup</button>
+            <button className="signup">Signup</button>
         </div>
       </div>
     );
