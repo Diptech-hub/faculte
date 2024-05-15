@@ -22,7 +22,9 @@
   margin-top: 20px;
 }
 
-.explore-button {
+.explore__button {
   display: block;
   margin: 60px auto;
+  background: #034cdd;
+  color: white;
 }

@@ -59,7 +59,7 @@ const Explore: React.FC = () => {
           alt="desing"
         />
       </div>
-      <button className="explore-button">Explore Categories <IoMdArrowRoundForward /></button>
+      <button className="explore__button">Explore Categories <IoMdArrowRoundForward /></button>
     </div>
   );
 };

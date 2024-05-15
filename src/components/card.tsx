@@ -17,7 +17,7 @@ const Card: FC<Props> = ({ text1, text2, imgr, alt }) => {
         <p>{text1}</p>
       </div>
       <p className="card-body">{text2}</p>
-      <button>
+      <button className="button__courses">
         See Courses  
         <IoMdArrowRoundForward />
       </button>

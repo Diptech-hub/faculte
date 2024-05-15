@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       </p>
       <div className="hero-input">
         <input className="input1" type="text" placeholder="Search for courses" />
-        <button>Search</button>
+        <button className="button__search">Search</button>
       </div>
       <img src={Reactangle3} alt="rectangle3" />
     </div>

@@ -34,7 +34,7 @@
   height: 50px;
 }
 
-button {
+.button__courses {
   background: #034cdd;
   color: white;
   font-size: 12px;
