@@ -4,6 +4,7 @@ import Banner from "../components/banner"
 import Footer from "../components/footer"
 import Tutor from "../components/tutor"
 import Explore from "../components/explore"
+import Faculte from "../components/newFaculte"
 
 const Home: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
         <NavBar/>
         <Hero />
         <Banner />
+        <Faculte />
         <Explore />
         <Tutor />
         <Footer />

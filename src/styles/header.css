@@ -1,0 +1,21 @@
+.header{
+    margin: 20px 60px;
+}
+
+.header p:first-child {
+font-size: 24px;
+font-weight: bold;
+/* line-height: 60px; */
+letter-spacing: -0.01em;
+text-align: left;
+
+}
+
+.header p:last-child {
+font-size: 12px;
+font-weight: normal;
+line-height: 20px;
+letter-spacing: -0.10000000149011612px;
+text-align: left;
+
+}
