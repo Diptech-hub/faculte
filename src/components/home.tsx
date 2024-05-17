@@ -5,6 +5,7 @@ import Footer from "../components/footer"
 import Tutor from "../components/tutor"
 import Explore from "../components/explore"
 import Faculte from "../components/newFaculte"
+import Community from "../components/community"
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <Banner />
         <Faculte />
         <Explore />
+        <Community />
         <Tutor />
         <Footer />
       </div>
