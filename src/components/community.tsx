@@ -21,7 +21,7 @@ const data: DataItem[] = [
   },
   {
     img: azeez,
-    name: "mickey Laughter",
+    name: "Azeez Laughter",
     text: "Principal, Kemtop Academy",
     review:
       "“Thanks to Udemy Business, Booz Allen has armed our workforce, specifically its data scientists, with highly relevant and in-demand tech skills that are enabling consultants to stay ahead of big data trends and raise the bar on proficiency, skills, and competencies to meet client demand.”",
@@ -81,11 +81,11 @@ const Community: React.FC = () => {
         </div>
 
         <div className="buttons">
-          <button onClick={handlePrevClick}>
-            <FaRegArrowAltCircleLeft />
+          <button className="buttons__carousel" onClick={handlePrevClick}>
+            <FaRegArrowAltCircleLeft className="carouselIcon"/>
           </button>
-          <button onClick={handleNextClick}>
-            <FaRegArrowAltCircleRight />
+          <button className="buttons__carousel" onClick={handleNextClick}>
+            <FaRegArrowAltCircleRight className="carouselIcon"/>
           </button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .communityhead {
     background: #034CDD33;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
   
   .community {
@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0; /* Ensure that items don't shrink */
+    flex-shrink: 0;
   }
   
   .community__body1 img {
@@ -82,17 +82,17 @@
     margin-top: 20px;
   }
   
-  button {
-    margin: 0 10px;
-    padding: 10px 20px;
+  .buttons__carousel {
     color: #034CDD;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     background: none;
   }
+
+  .carouselIcon {
+    width: 30px;
+    height: 30px;
+  }
   
-  /* button:hover {
-    background-color: #0056b3;
-  } */
   
