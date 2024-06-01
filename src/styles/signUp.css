@@ -1,0 +1,128 @@
+.signupContainer {
+  margin: 60px;
+}
+
+.signupHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.signupHead p {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 36.31px;
+  text-align: left;
+  color: #034cdd;
+}
+
+.join {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 42px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.signupBody {
+  width: 30%;
+  margin: 0 auto;
+  border: 1px solid grey;
+  padding: 20px;
+}
+
+.signupContent label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20.84px;
+  letter-spacing: -0.10420175641775131px;
+  text-align: left;
+  padding-bottom: 50px;
+}
+
+.signupContent input {
+  border: 1.04px solid #dae0e6;
+  box-shadow: 0px 1.04px 2.08px 0px #1018280a;
+  padding: 6px 160px 6px 8px;
+  border-radius: 6px;
+  border: 1.04px 0px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.signupContent input::placeholder {
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 22.92px;
+  letter-spacing: -0.10420175641775131px;
+  text-align: left;
+  color: #919ba7;
+}
+
+.signupButton {
+  padding: 8px 72px;
+  gap: 4.58px;
+  border-radius: 6px;
+  background: #034cdd;
+  color: white;
+  box-shadow: 0px 1px 2px 0px #1018280a;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 19.85px;
+  letter-spacing: -0.07634584605693817px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.signupBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.line {
+  height: 1px; 
+  background-color: #e0e0e0; 
+  width: 100%; 
+  margin: 10px 0;
+}
+
+.signupBottom p:first-child {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15.27px;
+  letter-spacing: -0.07634584605693817px;
+  text-align: left;
+}
+
+.signupBottom p:first-child a {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15.27px;
+  letter-spacing: -0.07634584605693817px;
+  text-align: left;
+  color: #034cdd;
+  text-decoration: none;
+}
+
+.signupBottom p:last-child {
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 15.27px;
+  letter-spacing: -0.07634584605693817px;
+  text-align: left;
+}
+
+.signupBottom p:last-child a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15.27px;
+  letter-spacing: -0.07634584605693817px;
+  text-align: left;
+  color: #034cdd;
+  text-decoration: none;
+}
