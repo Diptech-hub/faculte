@@ -30,6 +30,7 @@
   width: 30%;
   margin: 0 auto;
   border: 1px solid grey;
+  border-radius: 6px;
   padding: 20px;
 }
 
@@ -61,7 +62,7 @@
 }
 
 .signupButton {
-  padding: 8px 72px;
+  padding: 8px 140px;
   gap: 4.58px;
   border-radius: 6px;
   background: #034cdd;
