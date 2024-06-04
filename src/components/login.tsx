@@ -1,7 +1,7 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import "../styles/signUp.css";
+import "../styles/login.css";
 
 const Login: React.FC = () => {
   return (
@@ -32,8 +32,8 @@ const Login: React.FC = () => {
         <div className="loginBottom">
           <div className="line"></div>
           <p className="or">or</p>
-          <button className="loginSocialButton"><FcGoogle />Continue with Google</button>
-          <button className="loginSocialButton"> <FaFacebook />Continue with Facebook</button>
+          <button className="loginSocialButton1"><FcGoogle />Continue with Google</button>
+          <button className="loginSocialButton2"> <FaFacebook />Continue with Facebook</button>
           <p>
             Don't have an Account? <a href="">Sign up </a>
           </p>

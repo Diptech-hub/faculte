@@ -1,5 +1,5 @@
 .signupContainer {
-  margin: 60px;
+  margin: 40px 60px; 
 }
 
 .signupHead {
@@ -112,7 +112,7 @@
 
 .signupBottom p:last-child {
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 15.27px;
   letter-spacing: -0.07634584605693817px;
   text-align: left;
