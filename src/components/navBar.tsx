@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom"
 import { LuShoppingCart } from "react-icons/lu";
+import { Link } from "react-router-dom"
 import "../styles/navBar.css"
 
 const NavBar: React.FC = () => {
@@ -11,8 +12,8 @@ const NavBar: React.FC = () => {
             <a href="">For Schools</a>
             <a href="">Teach</a>
             <a href=""><LuShoppingCart /></a>
-            <a href="">Login</a>
-            <button className="signup">Signup</button>
+            <Link to="/login"><a href="">Login</a></Link>
+            <Link to="/signup"><button className="signup">Signup</button></Link>
         </div>
       </div>
     );

@@ -6,8 +6,6 @@ import Tutor from "../components/tutor"
 import Explore from "../components/explore"
 import Faculte from "../components/newFaculte"
 import Community from "../components/community"
-import SignUp from "../components/signUp"
-import Login from "../components/login"
 
 const Home: React.FC = () => {
     return (
@@ -20,8 +18,6 @@ const Home: React.FC = () => {
         <Community />
         <Tutor />
         <Footer />
-        <SignUp />
-        <Login />
       </div>
     );
   }

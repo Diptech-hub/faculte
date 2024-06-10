@@ -1,6 +1,7 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import "../styles/login.css";
 
 const Login: React.FC = () => {
@@ -8,9 +9,10 @@ const Login: React.FC = () => {
     <div className="loginContainer">
       <div className="loginHead">
         <p>Faculte</p>
-        <a href="">
+        <Link to="/"><a href="">
           <IoCloseSharp />
         </a>
+        </Link>
       </div>
       <p className="join">Log in to your Faculte account</p>
       <div className="loginBody">
@@ -35,7 +37,7 @@ const Login: React.FC = () => {
           <button className="loginSocialButton1"><FcGoogle />Continue with Google</button>
           <button className="loginSocialButton2"> <FaFacebook />Continue with Facebook</button>
           <p>
-            Don't have an Account? <a href="">Sign up </a>
+            Don't have an Account? <Link to="/signup"><a href="">Sign up </a></Link>
           </p>
         </div>
       </div>

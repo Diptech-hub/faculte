@@ -1,4 +1,5 @@
 import { IoCloseSharp } from "react-icons/io5";
+import { Link } from "react-router-dom"
 import "../styles/signUp.css";
 
 const SignUp: React.FC = () => {
@@ -6,9 +7,10 @@ const SignUp: React.FC = () => {
     <div className="signupContainer">
       <div className="signupHead">
         <p>Faculte</p>
-        <a href="">
+        <Link to="/"><a href="">
           <IoCloseSharp />
         </a>
+        </Link>
       </div>
       <p className="join">Join Faculte to start learning</p>
       <div className="signupBody">
@@ -39,7 +41,7 @@ const SignUp: React.FC = () => {
           </p>
           <div className="line"></div>
           <p>
-            Already have an Account? <a href="">Log in </a>
+            Already have an Account? <Link to="/login"><a href="">Log in </a></Link>
           </p>
         </div>
       </div>
