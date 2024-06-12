@@ -1,6 +1,6 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom"
-import "../styles/signUp.css";
+import "../../styles/signUp.css";
 
 const SignUp: React.FC = () => {
   return (

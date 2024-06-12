@@ -2,7 +2,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import "../styles/login.css";
+import "../../styles/login.css"
 
 const Login: React.FC = () => {
   return (
