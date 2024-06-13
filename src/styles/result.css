@@ -1,0 +1,30 @@
+.resultHead {
+    padding: 5px 60px;
+    background: #034cdd;
+    color: white;
+}
+
+.resultHead_1 {
+font-size: 12px;
+font-weight: normal;
+line-height: 20px;
+letter-spacing: -0.10000000149011612px;
+text-align: left;
+color: white;
+text-decoration: none;
+}
+
+.resultHead_1 > span {
+    color: #BDBDBD;
+    ;
+}
+
+.resultHead_2 {
+    margin: 5px 0;
+font-size: 40px;
+font-weight: bold;
+line-height: 68px;
+letter-spacing: -0.02em;
+text-align: left;
+
+}

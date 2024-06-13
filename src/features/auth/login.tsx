@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     const resultAction = await dispatch(signInUser({ email, password }));
     if (signInUser.fulfilled.match(resultAction)) {
-      navigate("/");
+      navigate("/result");
     }
   };
 

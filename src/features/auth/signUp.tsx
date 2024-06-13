@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
     const resultAction = await dispatch(signUpUser({ email, password }));
     if (signUpUser.fulfilled.match(resultAction)) {
-      navigate("/"); 
+      navigate("/result"); 
     }
   };
 
