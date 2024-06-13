@@ -71,7 +71,7 @@ margin-bottom: 5px;
 }
 
 .loginButton {
-  padding: 8px 140px;
+  padding: 8px 120px;
   gap: 4.58px;
   border-radius: 6px;
   background: #034cdd;
@@ -86,9 +86,19 @@ margin-bottom: 5px;
   margin-top: 10px;
 }
 
+.error{
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 19.85px;
+  letter-spacing: -0.07634584605693817px;
+  color: red;
+  text-align: center;
+  margin-top: 5px;
+}
+
 .loginSocialButton1 {
   /* padding: 8px 140px; */
-  padding: 8px 80px;
+  padding: 8px 60px;
   display: flex;
   flex-direction: row;
   gap: 4.58px;
@@ -106,7 +116,7 @@ margin-bottom: 5px;
 
 .loginSocialButton2 {
     /* padding: 8px 140px; */
-    padding: 8px 72px;
+    padding: 8px 52px;
     display: flex;
     flex-direction: row;
     gap: 4.58px;
