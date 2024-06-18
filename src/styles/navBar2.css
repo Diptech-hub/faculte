@@ -1,0 +1,63 @@
+.topBar {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 15px 60px 15px 60px;
+  background: #034cdd;
+  color: white;
+}
+
+.top-name {
+  font-size: 12px;
+  font-weight: bolder;
+  line-height: 29.3px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+
+.body a {
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 29.3px;
+  text-decoration: none;
+  color: white;
+}
+
+.account-container {
+  position: relative;
+}
+
+.hover-content {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.hover-content p {
+  margin: 0;
+  color: #034cdd;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 29.3px;
+}
+
+.hover-content button {
+  padding: 5px 10px;
+  border: 8px;
+  background-color: #034cdd;
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+  cursor: pointer;
+}
