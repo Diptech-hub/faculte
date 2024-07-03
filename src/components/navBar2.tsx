@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { LuShoppingCart } from "react-icons/lu";
 import { MdOutlineNotificationAdd } from "react-icons/md";
 import { RiAccountPinCircleFill } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 import { auth } from "../firebaseConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import "../styles/navBar2.css";
@@ -58,7 +59,7 @@ const NavBar2: React.FC = () => {
           {isHovered && user && (
             <div className="hover-content">
               <p>{user.email}</p>
-              <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogout}>Logout <FiLogOut /></button>
             </div>
           )}
         </div>

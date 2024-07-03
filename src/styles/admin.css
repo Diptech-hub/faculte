@@ -1,0 +1,95 @@
+/* body {
+    font-family: Arial, sans-serif;
+  } */
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #444;
+}
+
+.adminDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adminDetails form {
+  width: 100%;
+}
+
+.adminDetails label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.adminDetails input[type="text"],
+.adminDetails input[type="date"],
+.adminDetails input[type="file"],
+.adminDetails input[type="number"],
+.adminDetails select {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.adminDetails input[type="text"]:focus,
+.adminDetails input[type="date"]:focus,
+.adminDetails input[type="file"]:focus,
+.adminDetails input[type="number"]:focus,
+.adminDetails select:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+.adminDetails .markdown {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.adminDetails button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #034cdd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.adminDetails button[type="submit"]:hover {
+  background-color: #030cdd;
+}
+
+@media (max-width: 600px) {
+  .adminDetails {
+    padding: 10px;
+  }
+
+  .adminDetails input[type="text"],
+  .adminDetails input[type="date"],
+  .adminDetails input[type="file"],
+  .adminDetails input[type="number"],
+  .adminDetails select {
+    width: calc(100% - 14px);
+  }
+}
