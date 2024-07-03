@@ -62,7 +62,7 @@ const Admin: React.FC = () => {
 
   return (
     <div>
-      <p>Register your Faculty Course</p>
+      <p className="admin">Register your Faculty Course</p>
       <div className="adminDetails">
         <form onSubmit={handleSubmit}>
           <label>Course Title:</label>
