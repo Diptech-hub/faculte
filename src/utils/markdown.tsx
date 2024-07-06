@@ -1,13 +1,20 @@
-
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-function Markdown() {
-  const [markdown, setMarkdown] = useState('');
+interface MarkdownProps {
+  onChange?: (markdown: string) => void;
+}
 
-  const handleInputChange = (event: { target: { value: SetStateAction<string>; }; }) => {
-    setMarkdown(event.target.value);
+const Markdown: React.FC<MarkdownProps> = ({ onChange }) => {
+  const [markdown, setMarkdown] = useState<string>("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const updatedMarkdown = event.target.value;
+    setMarkdown(updatedMarkdown);
+    if (onChange) {
+      onChange(updatedMarkdown);
+    }
   };
 
   return (
@@ -15,7 +22,7 @@ function Markdown() {
       <textarea
         value={markdown}
         onChange={handleInputChange}
-        placeholder="Type your markdown here..."
+        placeholder="Enter your course overview here..."
         style={{ width: '80%', height: '200px', marginBottom: '20px' }}
       />
       <div style={{ width: '80%', border: '1px solid #ddd', padding: '20px' }}>

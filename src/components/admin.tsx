@@ -17,6 +17,7 @@ interface AdminFormState {
   discountPrice: number;
   language: string;
   dateCreated: string;
+  markdown: string;
   courseImage: File | null;
   courseVideo: File | null;
 }
@@ -32,6 +33,7 @@ const Admin: React.FC = () => {
     discountPrice: 0,
     language: "",
     dateCreated: "",
+    markdown: "",
     courseImage: null,
     courseVideo: null,
   });
@@ -60,6 +62,10 @@ const Admin: React.FC = () => {
     setFormState({ ...formState, [name]: value });
   };
 
+  const handleMarkdownChange = (markdown: string) => {
+    setFormState({ ...formState, markdown });
+  };
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, files } = e.target;
     if (files && files.length > 0) {
@@ -80,8 +86,8 @@ const Admin: React.FC = () => {
     );
 
     // Add specific numeric validations
-    if (isValid && formState.actualPrice <= formState.discountPrice) {
-      alert("Discount price should be less than actual price");
+    if (isValid && formState.actualPrice >= formState.discountPrice) {
+      alert("Discounted price should be less than or equal to actual price");
       return;
     }
 
@@ -128,6 +134,7 @@ const Admin: React.FC = () => {
           discountPrice: 0,
           language: "",
           dateCreated: "",
+          markdown: "",
           courseImage: null,
           courseVideo: null,
         }); // Clear form after submission
@@ -142,7 +149,7 @@ const Admin: React.FC = () => {
 
   return (
     <div>
-      <p className="admin">Register your Faculty Course</p>
+      <p className="admin">Register your Faculte Course</p>
       <div className="adminDetails">
         <form onSubmit={handleSubmit}>
           <label>Course Title:</label>
@@ -234,7 +241,7 @@ const Admin: React.FC = () => {
           />
           <br />
           <label>Overview</label>
-          <Markdown />
+          <Markdown onChange={handleMarkdownChange} />
           <br />
           <label>Date Created:</label>
           <input
