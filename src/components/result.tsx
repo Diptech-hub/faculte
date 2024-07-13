@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PiGreaterThanBold } from 'react-icons/pi';
 import { TbAdjustmentsHorizontal } from 'react-icons/tb';
@@ -9,8 +9,6 @@ import NavBar2 from './navBar2';
 import Dropdown from './dropdown';
 import Footer from './footer';
 import '../styles/result.css';
-
-// Define interface for Firestore document
 interface Course {
   courseTitle: string;
   // Add other fields as needed
@@ -56,18 +54,16 @@ const Result: React.FC = () => {
       <div className="resultData">
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
-        <ul>
         {data.map((doc: unknown, index: number) => (
-            <li key={index}>
-              <h3>{(doc as Course).courseTitle}</h3>
+            <div key={index}>
+              <p>{(doc as Course).courseTitle}</p>
               {/* Add other fields as needed */}
-            </li>
+            </div>
           ))}
-        </ul>
       </div>
       <Footer />
     </div>
   );
 };
 
-export default Result;
+export default Result; 
