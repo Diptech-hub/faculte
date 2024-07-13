@@ -56,7 +56,9 @@ const Admin: React.FC = () => {
   }, [navigate]);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value });
@@ -86,8 +88,8 @@ const Admin: React.FC = () => {
     );
 
     // Add specific numeric validations
-    if (isValid && formState.actualPrice >= formState.discountPrice) {
-      alert("Discounted price should be less than or equal to actual price");
+    if (!isValid || formState.discountPrice > formState.actualPrice) {
+      alert("Discount price should be less than or equal to actual price");
       return;
     }
 
@@ -122,7 +124,7 @@ const Admin: React.FC = () => {
 
         await addDoc(collection(db, "courses"), firestoreData);
 
-        alert("Details Submitted");
+        alert("Details Submitted Successfully");
 
         setFormState({
           courseTitle: "",
@@ -138,6 +140,11 @@ const Admin: React.FC = () => {
           courseImage: null,
           courseVideo: null,
         }); // Clear form after submission
+
+        // Clear file input fields
+        (document.querySelector('input[name="courseImage"]') as HTMLInputElement).value = "";
+        (document.querySelector('input[name="courseVideo"]') as HTMLInputElement).value = "";
+
       } catch (error) {
         console.error("Error adding document: ", error);
         alert("Failed to submit details. Please try again.");
@@ -149,7 +156,7 @@ const Admin: React.FC = () => {
 
   return (
     <div>
-      <p className="admin">Register your Faculte Course</p>
+      <p className="admin">Register your Faculty Course</p>
       <div className="adminDetails">
         <form onSubmit={handleSubmit}>
           <label>Course Title:</label>
@@ -208,7 +215,7 @@ const Admin: React.FC = () => {
             <option value="Art">Art</option>
             <option value="Science">Science</option>
             <option value="Business">Business</option>
-            <option value="Photogrpahy">Photography</option>
+            <option value="Photography">Photography</option>
             <option value="Music">Music</option>
             <option value="Basic Education">Basic Education</option>
           </select>
@@ -240,8 +247,8 @@ const Admin: React.FC = () => {
             required
           />
           <br />
-          <label>Overview</label>
-          <Markdown onChange={handleMarkdownChange} />
+          <label>Overview:</label>
+          <Markdown value={formState.markdown} onChange={handleMarkdownChange} />
           <br />
           <label>Date Created:</label>
           <input
@@ -273,6 +280,6 @@ const Admin: React.FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Admin;

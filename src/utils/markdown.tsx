@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 interface MarkdownProps {
   onChange?: (markdown: string) => void;
+  value: string;
 }
 
-const Markdown: React.FC<MarkdownProps> = ({ onChange }) => {
-  const [markdown, setMarkdown] = useState<string>("");
+const Markdown: React.FC<MarkdownProps> = ({ onChange, value }) => {
+  const [markdown, setMarkdown] = useState<string>(value);
+
+  useEffect(() => {
+    setMarkdown(value);
+  }, [value]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const updatedMarkdown = event.target.value;
