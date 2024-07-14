@@ -1,9 +1,18 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { collection, query, orderBy, getDocs, DocumentData } from 'firebase/firestore';
+import { collection, query, orderBy, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 
+interface Course {
+  courseTitle: string;
+  courseImage: string;
+  courseLevel: string;
+  learningType: string;
+  discountPrice: number;
+  // Add other fields as needed
+}
+
 interface FirestoreState {
-  data: DocumentData[];
+  data: Course[];
   loading: boolean;
   error: string | null;
 }
@@ -23,7 +32,7 @@ export const fetchFirestoreData = createAsyncThunk(
       const documents = snapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id,
-      }));
+      })) as unknown as Course[];
 
       return documents;
     } catch (error) {
@@ -41,7 +50,7 @@ const firestoreSlice = createSlice({
       .addCase(fetchFirestoreData.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchFirestoreData.fulfilled, (state, action: PayloadAction<DocumentData[]>) => {
+      .addCase(fetchFirestoreData.fulfilled, (state, action: PayloadAction<Course[]>) => {
         state.loading = false;
         state.data = action.payload;
       })
