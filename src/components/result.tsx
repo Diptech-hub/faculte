@@ -79,19 +79,21 @@ const Result: React.FC = () => {
               className="courseImage"
             />
             <div className="courseHead">
-              <p>{doc.courseTitle}</p>
-              <p>
-                <LiaSuitcaseSolid /> {doc.courseLevel}
-              </p>
-              <p>
-                <LuContact2 /> {doc.learningType}
-              </p>
+              <p className="courseTitle">{doc.courseTitle}</p>
+              <div className="courseHeadBody">
+                <p>
+                  <LiaSuitcaseSolid /> {doc.courseLevel}
+                </p>
+                <p>
+                  <LuContact2 /> {doc.learningType}
+                </p>
+              </div>
             </div>
             <div className="courseCta">
               <p>
                 #{doc.discountPrice} <span>/ one time fee</span>
               </p>
-              <button>Add to Cart</button>
+              <button className="cta">Add to Cart</button>
             </div>
           </div>
         ))}
