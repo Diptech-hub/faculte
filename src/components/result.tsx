@@ -1,9 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PiGreaterThanBold } from "react-icons/pi";
 import { TbAdjustmentsHorizontal } from "react-icons/tb";
-import { LiaSuitcaseSolid } from "react-icons/lia";
-import { LuContact2 } from "react-icons/lu";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../store";
 import { fetchFirestoreData } from "../features/fetch/courseList";
@@ -11,6 +9,9 @@ import NavBar2 from "./navBar2";
 import Dropdown from "./dropdown";
 import Footer from "./footer";
 import "../styles/result.css";
+import { LuContact2 } from "react-icons/lu";
+import { LiaSuitcaseSolid } from "react-icons/lia";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 interface Course {
   courseTitle: string;
@@ -23,13 +24,41 @@ interface Course {
 
 const Result: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error } = useSelector(
+  const { data, loading, error, lastDoc, hasMore } = useSelector(
     (state: RootState) => state.firestore
   );
+  const [pageSize] = useState<number>(20); // Set your page size
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
-    dispatch(fetchFirestoreData({ collectionName: "courses" }));
-  }, [dispatch]);
+    dispatch(
+      fetchFirestoreData({
+        collectionName: "courses",
+        pageSize,
+        startAfterDoc: null,
+      })
+    );
+  }, [dispatch, pageSize]);
+
+  const fetchPageData = (pageNumber: number) => {
+    const startAfterDoc = pageNumber > currentPage ? lastDoc : null;
+    dispatch(
+      fetchFirestoreData({ collectionName: "courses", pageSize, startAfterDoc })
+    );
+    setCurrentPage(pageNumber);
+  };
+
+  const nextPage = () => {
+    if (hasMore) {
+      fetchPageData(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      fetchPageData(currentPage - 1);
+    }
+  };
 
   const [, setSelectedOption] = useState<string>("");
 
@@ -89,6 +118,7 @@ const Result: React.FC = () => {
                 </p>
               </div>
             </div>
+            <div className="lineCard"></div>
             <div className="courseCta">
               <p>
                 #{doc.discountPrice} <span>/ one time fee</span>
@@ -97,6 +127,15 @@ const Result: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="paginationControls">
+        <button onClick={prevPage} disabled={currentPage === 1 || loading}>
+          <FaArrowLeft />
+        </button>
+        <span> {currentPage}</span>
+        <button onClick={nextPage} disabled={!hasMore || loading}>
+          <FaArrowRight />
+        </button>
       </div>
       <Footer />
     </div>
