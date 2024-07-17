@@ -19,15 +19,14 @@ interface Course {
   courseLevel: string;
   learningType: string;
   discountPrice: number;
-  // Add other fields as needed
 }
 
 const Result: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error, lastDoc, hasMore } = useSelector(
+  const { data, loading, error, lastDoc, hasMore, totalCount } = useSelector(
     (state: RootState) => state.firestore
   );
-  const [pageSize] = useState<number>(20); // Set your page size
+  const [pageSize] = useState<number>(20);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
@@ -97,6 +96,10 @@ const Result: React.FC = () => {
           <TbAdjustmentsHorizontal />
         </button>
       </div>
+      <div className="resultDataWrapper">
+      <div className="totalCount">
+         <p>{totalCount} Results Found</p>
+        </div>
       <div className="resultData">
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
@@ -127,6 +130,7 @@ const Result: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
       <div className="paginationControls">
         <button onClick={prevPage} disabled={currentPage === 1 || loading}>

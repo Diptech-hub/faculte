@@ -17,7 +17,6 @@ interface Course {
   courseLevel: string;
   learningType: string;
   discountPrice: number;
-  // Add other fields as needed
 }
 
 interface FirestoreState {
@@ -26,6 +25,7 @@ interface FirestoreState {
   error: string | null;
   lastDoc: QueryDocumentSnapshot<DocumentData> | null;
   hasMore: boolean;
+  totalCount: number;
 }
 
 const initialState: FirestoreState = {
@@ -34,6 +34,7 @@ const initialState: FirestoreState = {
   error: null,
   lastDoc: null,
   hasMore: true,
+  totalCount: 0,
 };
 
 interface FetchParams {
@@ -65,7 +66,10 @@ export const fetchFirestoreData = createAsyncThunk(
 
       const lastVisible = snapshot.docs[snapshot.docs.length - 1];
 
-      return { documents, lastVisible };
+      const totalSnapshot = await getDocs(query(collection(db, collectionName)));
+      const totalCount = totalSnapshot.size;
+
+      return { documents, lastVisible, totalCount };
     } catch (error) {
       return rejectWithValue((error as Error).message);
     }
@@ -88,12 +92,14 @@ const firestoreSlice = createSlice({
           action: PayloadAction<{
             documents: Course[];
             lastVisible: QueryDocumentSnapshot<DocumentData>;
+            totalCount: number;
           }>
         ) => {
           state.loading = false;
           state.data = action.payload.documents;
           state.lastDoc = action.payload.lastVisible;
           state.hasMore = action.payload.documents.length > 0;
+          state.totalCount = action.payload.totalCount;
         }
       )
       .addCase(fetchFirestoreData.rejected, (state, action) => {
