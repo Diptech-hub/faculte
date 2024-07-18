@@ -129,6 +129,8 @@
   font-weight: bold;
   line-height: 20.42px;
   text-align: left;
+  text-decoration: none;
+  color: black;
 }
 
 .courseHeadBody {

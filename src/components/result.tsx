@@ -19,6 +19,7 @@ interface Course {
   courseLevel: string;
   learningType: string;
   discountPrice: number;
+  id: string; // Ensure the id is part of the Course interface
 }
 
 const Result: React.FC = () => {
@@ -97,40 +98,42 @@ const Result: React.FC = () => {
         </button>
       </div>
       <div className="resultDataWrapper">
-      <div className="totalCount">
-         <p>{totalCount} Results Found</p>
+        <div className="totalCount">
+          <p>{totalCount} Results Found</p>
         </div>
-      <div className="resultData">
-        {loading && <p>Loading...</p>}
-        {error && <p>Error: {error}</p>}
-        {data.map((doc: Course, index: number) => (
-          <div key={index} className="courseItem">
-            <img
-              src={doc.courseImage}
-              alt={doc.courseTitle}
-              className="courseImage"
-            />
-            <div className="courseHead">
-              <p className="courseTitle">{doc.courseTitle}</p>
-              <div className="courseHeadBody">
+        <div className="resultData">
+          {loading && <p>Loading...</p>}
+          {error && <p>Error: {error}</p>}
+          {data.map((doc: Course, index: number) => (
+            <div key={index} className="courseItem">
+              <img
+                src={doc.courseImage}
+                alt={doc.courseTitle}
+                className="courseImage"
+              />
+              <div className="courseHead">
+                <Link to={`/items/${doc.id}`} className="courseTitle">
+                  {doc.courseTitle}
+                </Link>
+                <div className="courseHeadBody">
+                  <p>
+                    <LiaSuitcaseSolid /> {doc.courseLevel}
+                  </p>
+                  <p>
+                    <LuContact2 /> {doc.learningType}
+                  </p>
+                </div>
+              </div>
+              <div className="lineCard"></div>
+              <div className="courseCta">
                 <p>
-                  <LiaSuitcaseSolid /> {doc.courseLevel}
+                  #{doc.discountPrice} <span>/ one time fee</span>
                 </p>
-                <p>
-                  <LuContact2 /> {doc.learningType}
-                </p>
+                <button className="cta">Add to Cart</button>
               </div>
             </div>
-            <div className="lineCard"></div>
-            <div className="courseCta">
-              <p>
-                #{doc.discountPrice} <span>/ one time fee</span>
-              </p>
-              <button className="cta">Add to Cart</button>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
       <div className="paginationControls">
         <button onClick={prevPage} disabled={currentPage === 1 || loading}>
