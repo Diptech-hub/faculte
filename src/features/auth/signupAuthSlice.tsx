@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, User } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 
 interface SignInState {
-  user: unknown | null;
+  user: User | null;
   loading: boolean;
   error: string | null;
 }

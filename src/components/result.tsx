@@ -27,7 +27,8 @@ const Result: React.FC = () => {
   const { data, loading, error, lastDoc, hasMore, totalCount } = useSelector(
     (state: RootState) => state.firestore
   );
-  const [pageSize] = useState<number>(20);
+  
+  const pageSize = 20;
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
@@ -60,12 +61,6 @@ const Result: React.FC = () => {
     }
   };
 
-  const [, setSelectedOption] = useState<string>("");
-
-  const handleSelect = (value: string) => {
-    setSelectedOption(value);
-  };
-
   const options = [
     { value: "option1", label: "Option 1" },
     { value: "option2", label: "Option 2" },
@@ -87,11 +82,7 @@ const Result: React.FC = () => {
           type="text"
           placeholder="UX Design"
         />
-        <Dropdown
-          options={options}
-          onSelect={handleSelect}
-          placeholder="Choose"
-        />
+        <Dropdown options={options} onSelect={() => {}} placeholder="Choose" />
         <button className="resultSearch_button">Submit</button>
         <button className="resultSearch_filter">
           <TbAdjustmentsHorizontal />
@@ -104,8 +95,8 @@ const Result: React.FC = () => {
         <div className="resultData">
           {loading && <p>Loading...</p>}
           {error && <p>Error: {error}</p>}
-          {data.map((doc: Course, index: number) => (
-            <div key={index} className="courseItem">
+          {data.map((doc: Course) => (
+            <div key={doc.id} className="courseItem">
               <img
                 src={doc.courseImage}
                 alt={doc.courseTitle}

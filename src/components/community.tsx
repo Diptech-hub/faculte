@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import azeez from "../assets/azeez.png";
 import "../styles/community.css";
-import { FaRegArrowAltCircleLeft } from "react-icons/fa";
-import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
 
 interface DataItem {
   img: string;
@@ -67,8 +66,8 @@ const Community: React.FC = () => {
             className="community__body"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {data.map((d, index) => (
-              <div className="community__body1" key={index}>
+            {data.map((d, community) => (
+              <div className="community__body1" key={community}>
                 <img src={d.img} alt={d.name} />
                 <div className="community__body1content">
                   <p>{d.name}</p>

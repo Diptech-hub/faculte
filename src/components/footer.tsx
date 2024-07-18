@@ -1,6 +1,5 @@
-import { FaSquareFacebook } from "react-icons/fa6";
+import { FaSquareFacebook, FaSquareTwitter } from "react-icons/fa6";
 import { BiLogoInstagramAlt } from "react-icons/bi";
-import { FaSquareTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import "../styles/footer.css"
 

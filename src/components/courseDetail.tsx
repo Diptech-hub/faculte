@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { RootState, AppDispatch } from "../store";
 import { fetchCourseDetails } from "../features/fetch/courseList";
-// import "../styles/courseDetails.css";
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
