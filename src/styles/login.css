@@ -48,7 +48,6 @@
   box-shadow: 0px 1.04px 2.08px 0px #1018280a;
   padding: 6px 160px 6px 8px;
   border-radius: 6px;
-  border: 1.04px 0px 0px 0px;
   margin-bottom: 10px;
 }
 
@@ -97,7 +96,6 @@ margin-bottom: 5px;
 }
 
 .loginSocialButton1 {
-  /* padding: 8px 140px; */
   padding: 8px 60px;
   display: flex;
   flex-direction: row;
@@ -115,7 +113,6 @@ margin-bottom: 5px;
 }
 
 .loginSocialButton2 {
-    /* padding: 8px 140px; */
     padding: 8px 52px;
     display: flex;
     flex-direction: row;

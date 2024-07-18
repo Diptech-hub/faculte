@@ -21,7 +21,6 @@
 .top-hero .hero2 {
   font-size: 12px;
   font-weight: noraml;
-  /* line-height: 28px; */
   letter-spacing: -0.10000000149011612px;
   text-align: center;
   padding: 30px 320px 30px 320px;
@@ -55,8 +54,6 @@ button {
 }
 
 .top-hero img {
-  /* width: 80%;
-height: 50%; */
   width: 900px;
   height: 300px;
   border-radius: 20px;
