@@ -16,6 +16,7 @@ import { FiDownload } from "react-icons/fi";
 import { BiShare } from "react-icons/bi";
 import NavBar3 from "./navBar3";
 import "../styles/courseDetail.css";
+import Footer from "./footer"
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -57,20 +58,20 @@ const CourseDetails: React.FC = () => {
       <div className="courseDetails_body">
         <div className="courseDetails_body1">
           <div className="courseDetails_body1Head">
-            <p>{selectedCourse.courseTitle}</p>
+            <h1>{selectedCourse.courseTitle}</h1>
             <p>{selectedCourse.courseType}</p>
             <div className="courseDetails_body1HeadList">
               <p>
-                Last Updates <span>{selectedCourse.dateCreated}</span>
+                Last Updates <br /> <span>{selectedCourse.dateCreated}</span>
               </p>
               <p>
-                Level <span>{selectedCourse.courseType}</span>
+                Level <br /><span>{selectedCourse.courseType}</span>
               </p>
               <p>
-                Type <span>{selectedCourse.learningType}</span>
+                Type <br /><span>{selectedCourse.learningType}</span>
               </p>
               <p>
-                Language <span>{selectedCourse.language}</span>
+                Language <br /><span>{selectedCourse.language}</span>
               </p>
               <button>
                 <FaRegHeart />
@@ -155,6 +156,7 @@ const CourseDetails: React.FC = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

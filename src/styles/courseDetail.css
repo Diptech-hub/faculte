@@ -1,23 +1,100 @@
-.courseDetails_top{
-    padding: 30px 60px;
-    background-color: #034cdd;
+.courseDetails_top {
+  padding: 30px 60px;
+  background-color: #034cdd;
+  margin-top: -5px;
 }
 
-.courseDetails_top p{
-font-size: 12.5px;
-font-weight: 500;
-line-height: 20px;
-letter-spacing: -0.10000000149011612px;
-text-align: left;
-color: white;
+.courseDetails_top p {
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: white;
 }
 
-.courseDetails_top span{
-    color: #BDBDBD;
+.courseDetails_top span {
+  color: #bdbdbd;
 }
 
-.courseDetails_body{
-    display: flex;
-    flex-direction: row;
-    padding: 30px 60px;
+.courseDetails_body {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 60px;
+}
+
+.courseDetails_body1 {
+  width: 750px;
+  margin-right: 60px;
+}
+
+.courseDetails_body1Head h1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: left;
+  width: 500px;
+  padding: 0 0 20px 0;
+}
+
+.courseDetails_body1Head > p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #034cdd;
+  padding: 5px 0;
+  border-radius: 5px;
+  opacity: 0px;
+  background: #034cdd33;
+  width: 120px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.courseDetails_body1HeadList {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.courseDetails_body1HeadList > p {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: #4f4f4f;
+  padding-right: 20px;
+}
+
+.courseDetails_body1HeadList > p > span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  color: #000000;
+}
+
+.courseDetails_body1HeadList > button {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 24.29px;
+  letter-spacing: -0.12142857164144516px;
+  text-align: left;
+  color: #272d37;
+  width: Hug (105.43px) px;
+  height: Hug (34.71px) px;
+  padding: 4.86px 12.14px 4.86px 12.14px;
+  gap: 9.71px;
+  border-radius: 6px;
+  opacity: 0px;
+  background: #034cdd33;
+  margin-left: 20px;
+}
+
+video {
+  border-radius: 10px;
+  width: 750px;
+  opacity: 0px;
+  color: #ffa200;
 }
