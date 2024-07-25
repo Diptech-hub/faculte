@@ -98,3 +98,90 @@ video {
   opacity: 0px;
   color: #ffa200;
 }
+
+.courseDetails_overview,
+.courseDetails_learn,
+.courseDetails_requirements {
+  position: relative;
+  max-width: 800px;
+  padding: 20px 30px;
+  margin: 40px 0;
+  border-radius: 10px;
+  border: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 85.88%
+  );
+  border: 1px solid #bdbdbd;
+}
+
+.courseDetails_overview > p:nth-child(1),
+.courseDetails_learn > p:nth-child(1),
+.courseDetails_requirements > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+.text-collapse {
+  overflow: hidden;
+  position: relative;
+  max-height: 12em;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: justify;
+}
+
+.text-collapse::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1.5em;
+}
+
+.text-expand {
+  display: block;
+  max-height: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: justify;
+}
+
+.toggleButton {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #034cdd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.10000000149011612px;
+  text-align: justify;
+}
+
+.toggleButton:hover {
+  background-color: #0056b3;
+}
+
+.courseDetails_learn li,
+.courseDetails_requirements li {
+  list-style: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: justify;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { RootState, AppDispatch } from "../store";
@@ -26,6 +26,8 @@ const CourseDetails: React.FC = () => {
     (state: RootState) => state.firestore
   );
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
   useEffect(() => {
     if (id) {
       dispatch(fetchCourseDetails(id));
@@ -33,6 +35,10 @@ const CourseDetails: React.FC = () => {
       navigate("/");
     }
   }, [dispatch, id, navigate]);
+
+  const toggleText = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   if (loading) {
     return <p>Loading...</p>;
@@ -89,7 +95,11 @@ const CourseDetails: React.FC = () => {
           </div>
           <div className="courseDetails_overview">
             <p>Overview</p>
-            <p>{selectedCourse.markdown}</p>
+            <p className={isExpanded ? "text-expand" : "text-collapse"}>{selectedCourse.markdown}</p>
+            <button className="toggleButton" onClick={toggleText}>
+              {isExpanded ? "Show less": "Show more" } 
+
+            </button>
           </div>
           <div className="courseDetails_learn">
             <p>What you'll learn </p>
@@ -101,7 +111,7 @@ const CourseDetails: React.FC = () => {
               <li>Indepth knowledge</li>
             </ul>
           </div>
-          <div className="courseDetails_require">
+          <div className="courseDetails_requirements">
             <p>Requirements</p>
             <ul>
               <li>Access to a computer system</li>
