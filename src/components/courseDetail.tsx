@@ -121,16 +121,19 @@ const CourseDetails: React.FC = () => {
         </div>
         <div className="courseDetails_body2">
           <div className="coursePrice">
-            <p>{selectedCourse.discountPrice}</p>
+            <p>#{selectedCourse.discountPrice}</p>
+            <div className="discount">
             <p>
-              {selectedCourse.actualPrice}
-              <span>40% off</span>
+              #{selectedCourse.actualPrice} 
             </p>
+            <span>40% off</span>
+            </div>
             <button>
               <PiShoppingCartSimpleBold />
               Enroll
             </button>
           </div>
+          {/* <div className="lineBody2"></div> */}
           <div className="courseLists">
             <p>This course includes</p>
             <ul>

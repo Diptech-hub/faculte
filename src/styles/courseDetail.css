@@ -8,7 +8,7 @@
   font-size: 12.5px;
   font-weight: 500;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: left;
   color: white;
 }
@@ -21,6 +21,8 @@
   display: flex;
   flex-direction: row;
   padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .courseDetails_body1 {
@@ -60,7 +62,7 @@
 .courseDetails_body1HeadList > p {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: left;
   color: #4f4f4f;
   padding-right: 20px;
@@ -70,7 +72,7 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: left;
   color: #000000;
 }
@@ -82,10 +84,7 @@
   letter-spacing: -0.12142857164144516px;
   text-align: left;
   color: #272d37;
-  width: Hug (105.43px) px;
-  height: Hug (34.71px) px;
-  padding: 4.86px 12.14px 4.86px 12.14px;
-  gap: 9.71px;
+  padding: 4.86px 12.14px;
   border-radius: 6px;
   opacity: 0px;
   background: #034cdd33;
@@ -119,7 +118,7 @@ video {
 .courseDetails_overview > p:nth-child(1),
 .courseDetails_learn > p:nth-child(1),
 .courseDetails_requirements > p:nth-child(1) {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 28px;
   text-align: left;
@@ -133,8 +132,9 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: justify;
+  color: #333333;
 }
 
 .text-collapse::after {
@@ -152,8 +152,9 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: justify;
+  color: #333333;
 }
 
 .toggleButton {
@@ -168,7 +169,7 @@ video {
   margin: 10px auto;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: justify;
 }
 
@@ -182,6 +183,89 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px;
   text-align: justify;
+  color: #333333;
+}
+
+.courseDetails_body2 {
+  width: 300px;
+  height: fit-content;
+  padding: 30px 30px;
+  border-radius: 10px;
+  border: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 85.88%
+  );
+  border: 1px solid #bdbdbd;
+}
+
+.coursePrice > p:nth-child(1) {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  margin-top: -2px;
+}
+
+.discount > p {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  text-decoration: line-through;
+  color: #828282;
+}
+
+.discount > span {
+  font-size: 8px;
+  font-weight: 400;
+  color: white;
+  margin-left: 10px;
+  background: #034cdd;
+  line-height: 10px;
+  padding: 5px 0;
+  border-radius: 5px;
+  width: 50px;
+  text-align: center;
+}
+
+.coursePrice > button {
+  margin: 30px 0;
+  padding: 10px 10px;
+  border: none;
+  background-color: #034cdd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  text-align: center;
+  width: 250px;
+}
+
+.courseLists > p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+.courseLists li {
+  list-style: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  text-align: justify;
+  color: #333333;
 }
