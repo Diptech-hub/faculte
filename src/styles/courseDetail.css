@@ -212,7 +212,7 @@ video {
 .discount {
   display: flex;
   flex-direction: row;
-  margin-top: -2px;
+  margin-top: 5px;
 }
 
 .discount > p {
@@ -228,6 +228,7 @@ video {
   font-weight: 400;
   color: white;
   margin-left: 10px;
+  margin-bottom: 25px;
   background: #034cdd;
   line-height: 10px;
   padding: 5px 0;
@@ -237,8 +238,8 @@ video {
 }
 
 .coursePrice > button {
-  margin: 30px 0;
-  padding: 10px 10px;
+  padding: 10px 20px;
+  margin: 10px 0;
   border: none;
   background-color: #034cdd;
   color: white;
@@ -249,6 +250,18 @@ video {
   letter-spacing: -0.1px;
   text-align: center;
   width: 250px;
+}
+
+.coursePrice button:nth-of-type(2) {
+  background-color: white;
+  color: #034cdd;
+  border: 1px solid #034cdd;
+}
+
+.coursePrice button:nth-of-type(2):hover {
+  background-color: #034cdd33;
+  border: 1px solid #034cdd33;
+  color: #034cdd;
 }
 
 .courseLists > p {
@@ -268,4 +281,47 @@ video {
   letter-spacing: -0.1px;
   text-align: justify;
   color: #333333;
+}
+
+/* popup.css */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-inner {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.popup-inner img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.popup-inner button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-inner button:hover {
+  background-color: #0056b3;
 }

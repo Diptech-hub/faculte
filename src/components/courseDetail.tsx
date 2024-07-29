@@ -11,12 +11,13 @@ import {
 } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";
 import { CiYoutube } from "react-icons/ci";
-import { MdOutlineArticle, MdDevices } from "react-icons/md";
+import { MdOutlineArticle, MdDevices, MdClose  } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 import { BiShare } from "react-icons/bi";
+import { GiReceiveMoney } from "react-icons/gi";
 import NavBar3 from "./navBar3";
 import "../styles/courseDetail.css";
-import Footer from "./footer"
+import Footer from "./footer";
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +28,7 @@ const CourseDetails: React.FC = () => {
   );
 
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -38,6 +40,10 @@ const CourseDetails: React.FC = () => {
 
   const toggleText = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
   };
 
   if (loading) {
@@ -71,13 +77,16 @@ const CourseDetails: React.FC = () => {
                 Last Updates <br /> <span>{selectedCourse.dateCreated}</span>
               </p>
               <p>
-                Level <br /><span>{selectedCourse.courseType}</span>
+                Level <br />
+                <span>{selectedCourse.courseType}</span>
               </p>
               <p>
-                Type <br /><span>{selectedCourse.learningType}</span>
+                Type <br />
+                <span>{selectedCourse.learningType}</span>
               </p>
               <p>
-                Language <br /><span>{selectedCourse.language}</span>
+                Language <br />
+                <span>{selectedCourse.language}</span>
               </p>
               <button>
                 <FaRegHeart />
@@ -95,10 +104,11 @@ const CourseDetails: React.FC = () => {
           </div>
           <div className="courseDetails_overview">
             <p>Overview</p>
-            <p className={isExpanded ? "text-expand" : "text-collapse"}>{selectedCourse.markdown}</p>
+            <p className={isExpanded ? "text-expand" : "text-collapse"}>
+              {selectedCourse.markdown}
+            </p>
             <button className="toggleButton" onClick={toggleText}>
-              {isExpanded ? "Show less": "Show more" } 
-
+              {isExpanded ? "Show less" : "Show more"}
             </button>
           </div>
           <div className="courseDetails_learn">
@@ -123,17 +133,18 @@ const CourseDetails: React.FC = () => {
           <div className="coursePrice">
             <p>#{selectedCourse.discountPrice}</p>
             <div className="discount">
-            <p>
-              #{selectedCourse.actualPrice} 
-            </p>
-            <span>40% off</span>
+              <p>#{selectedCourse.actualPrice}</p>
+              <span>40% off</span>
             </div>
-            <button>
+            <button onClick={togglePopup}>
               <PiShoppingCartSimpleBold />
-              Enroll
+              Add to Cart
+            </button>
+            <button>
+              <GiReceiveMoney />
+              Buy Now
             </button>
           </div>
-          {/* <div className="lineBody2"></div> */}
           <div className="courseLists">
             <p>This course includes</p>
             <ul>
@@ -170,6 +181,42 @@ const CourseDetails: React.FC = () => {
         </div>
       </div>
       <Footer />
+      {isPopupVisible && (
+        <Popup selectedCourse={selectedCourse} onClose={togglePopup} />
+      )}
+    </div>
+  );
+};
+
+interface PopupProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  selectedCourse: any;
+  onClose: () => void;
+}
+
+const Popup: React.FC<PopupProps> = ({ selectedCourse, onClose }) => {
+  return (
+    <div className="popup">
+      <div className="popup-inner">
+        <p>Added to cart</p>
+        <span>The course has been added to your cart</span>
+        <button onClick={onClose}><MdClose /></button>
+        <div>
+          <img
+            src={selectedCourse.courseImage}
+            alt={selectedCourse.courseTitle}
+          />
+          <h2>{selectedCourse.courseTitle}</h2>
+        </div>
+
+        <button
+          onClick={() => {
+            /* Add to cart logic here */
+          }}
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 };
