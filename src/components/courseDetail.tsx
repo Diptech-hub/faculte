@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams, useNavigate } from "react-router-dom";
-import { RootState, AppDispatch } from "../store";
-import { fetchCourseDetails } from "../features/fetch/courseList";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useNavigate } from 'react-router-dom';
+import { RootState, AppDispatch } from '../store';
+import { fetchCourseDetails } from '../features/fetch/courseList';
+import { addToCart } from '../features/cart/cart';
 import {
   PiGreaterThanBold,
   PiShoppingCartSimpleBold,
   PiExam,
   PiCertificate,
-} from "react-icons/pi";
-import { FaRegHeart } from "react-icons/fa";
-import { CiYoutube } from "react-icons/ci";
-import { MdOutlineArticle, MdDevices, MdClose  } from "react-icons/md";
-import { FiDownload } from "react-icons/fi";
-import { BiShare } from "react-icons/bi";
-import { GiReceiveMoney } from "react-icons/gi";
-import NavBar3 from "./navBar3";
-import "../styles/courseDetail.css";
-import Footer from "./footer";
+} from 'react-icons/pi';
+import { FaRegHeart } from 'react-icons/fa';
+import { CiYoutube } from 'react-icons/ci';
+import { MdOutlineArticle, MdDevices, MdClose } from 'react-icons/md';
+import { FiDownload } from 'react-icons/fi';
+import { BiShare } from 'react-icons/bi';
+import { GiReceiveMoney } from 'react-icons/gi';
+import NavBar3 from './navBar3';
+import '../styles/courseDetail.css';
+import Footer from './footer';
 
 const CourseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -34,7 +35,7 @@ const CourseDetails: React.FC = () => {
     if (id) {
       dispatch(fetchCourseDetails(id));
     } else {
-      navigate("/");
+      navigate('/');
     }
   }, [dispatch, id, navigate]);
 
@@ -44,6 +45,25 @@ const CourseDetails: React.FC = () => {
 
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible);
+  };
+
+  const handleAddToCart = () => {
+    if (selectedCourse) {
+      dispatch(
+        addToCart({
+          id: selectedCourse.id,
+          title: selectedCourse.courseTitle,
+          image: selectedCourse.courseImage,
+          price: selectedCourse.discountPrice,
+        })
+      );
+      togglePopup();
+    }
+  };
+
+  const handleProceedToCart = () => {
+    handleAddToCart();
+    navigate('/cart');
   };
 
   if (loading) {
@@ -59,20 +79,20 @@ const CourseDetails: React.FC = () => {
   }
 
   return (
-    <div className="courseDetails">
+    <div className='courseDetails'>
       <NavBar3 />
-      <div className="courseDetails_top">
+      <div className='courseDetails_top'>
         <p>
-          Home <PiGreaterThanBold /> {selectedCourse.courseType}{" "}
+          Home <PiGreaterThanBold /> {selectedCourse.courseType}{' '}
           <PiGreaterThanBold /> <span>{selectedCourse.courseTitle}</span>
         </p>
       </div>
-      <div className="courseDetails_body">
-        <div className="courseDetails_body1">
-          <div className="courseDetails_body1Head">
+      <div className='courseDetails_body'>
+        <div className='courseDetails_body1'>
+          <div className='courseDetails_body1Head'>
             <h1>{selectedCourse.courseTitle}</h1>
             <p>{selectedCourse.courseType}</p>
-            <div className="courseDetails_body1HeadList">
+            <div className='courseDetails_body1HeadList'>
               <p>
                 Last Updates <br /> <span>{selectedCourse.dateCreated}</span>
               </p>
@@ -97,21 +117,21 @@ const CourseDetails: React.FC = () => {
                 Share
               </button>
             </div>
-            <video width="600" controls>
-              <source src={selectedCourse.courseVideo} type="video/mp4" />
+            <video width='600' controls>
+              <source src={selectedCourse.courseVideo} type='video/mp4' />
               Your browser does not support the video tag.
             </video>
           </div>
-          <div className="courseDetails_overview">
+          <div className='courseDetails_overview'>
             <p>Overview</p>
-            <p className={isExpanded ? "text-expand" : "text-collapse"}>
+            <p className={isExpanded ? 'text-expand' : 'text-collapse'}>
               {selectedCourse.markdown}
             </p>
-            <button className="toggleButton" onClick={toggleText}>
-              {isExpanded ? "Show less" : "Show more"}
+            <button className='toggleButton' onClick={toggleText}>
+              {isExpanded ? 'Show less' : 'Show more'}
             </button>
           </div>
-          <div className="courseDetails_learn">
+          <div className='courseDetails_learn'>
             <p>What you'll learn </p>
             <ul>
               <li>Introduction to the course in details</li>
@@ -121,7 +141,7 @@ const CourseDetails: React.FC = () => {
               <li>Indepth knowledge</li>
             </ul>
           </div>
-          <div className="courseDetails_requirements">
+          <div className='courseDetails_requirements'>
             <p>Requirements</p>
             <ul>
               <li>Access to a computer system</li>
@@ -129,23 +149,23 @@ const CourseDetails: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="courseDetails_body2">
-          <div className="coursePrice">
+        <div className='courseDetails_body2'>
+          <div className='coursePrice'>
             <p>#{selectedCourse.discountPrice}</p>
-            <div className="discount">
+            <div className='discount'>
               <p>#{selectedCourse.actualPrice}</p>
               <span>40% off</span>
             </div>
-            <button onClick={togglePopup}>
+            <button onClick={handleAddToCart}>
               <PiShoppingCartSimpleBold />
               Add to Cart
             </button>
-            <button>
+            <button onClick={handleProceedToCart}>
               <GiReceiveMoney />
               Buy Now
             </button>
           </div>
-          <div className="courseLists">
+          <div className='courseLists'>
             <p>This course includes</p>
             <ul>
               <li>
@@ -181,7 +201,7 @@ const CourseDetails: React.FC = () => {
         </div>
       </div>
       <Footer />
-      {isPopupVisible && (
+      {isPopupVisible && selectedCourse && (
         <Popup selectedCourse={selectedCourse} onClose={togglePopup} />
       )}
     </div>
@@ -195,26 +215,33 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({ selectedCourse, onClose }) => {
-  return (
-    <div className="popup">
-      <div className="popup-inner">
-        <p>Added to cart</p>
-        <span>The course has been added to your cart</span>
-        <button onClick={onClose}><MdClose /></button>
-        <div>
-          <img
-            src={selectedCourse.courseImage}
-            alt={selectedCourse.courseTitle}
-          />
-          <h2>{selectedCourse.courseTitle}</h2>
-        </div>
+  const navigate = useNavigate();
 
-        <button
-          onClick={() => {
-            /* Add to cart logic here */
-          }}
-        >
-          Add to Cart
+  const handleProceedToCart = () => {
+    navigate('/cart');
+  };
+
+  return (
+    <div className='popup'>
+      <div className='popup-inner'>
+        <div className='popup-innerHead'>
+          <p>
+            Added to cart <br />
+            <span>The course has been added to your cart</span>
+          </p>
+          <button onClick={onClose}>
+            <MdClose />
+          </button>
+        </div>
+        <div className='popup-innerBody'>
+          <img src={selectedCourse.courseImage} alt={selectedCourse.courseTitle} />
+          <p>
+            {selectedCourse.courseTitle} <br />
+            <span>{selectedCourse.courseBranch}</span>
+          </p>
+        </div>
+        <button className='innerBtn' onClick={handleProceedToCart}>
+          Proceed to Cart
         </button>
       </div>
     </div>

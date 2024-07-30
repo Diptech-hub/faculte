@@ -6,6 +6,7 @@ import Result from "./components/result";
 import PrivateRoute from "./components/privateRoute";
 import Admin from "./components/admin"
 import CourseDetail from "./components/courseDetail"
+import Cart from "./components/cart"
 import "./App.css";
 
 const App: React.FC = () => {
@@ -19,6 +20,9 @@ const App: React.FC = () => {
       </Route>
       <Route path="/items/:id" element={<PrivateRoute />}>
         <Route path="" element={<CourseDetail />} />
+      </Route>
+      <Route path="/cart" element={<PrivateRoute />}>
+        <Route path="" element={<Cart />} />
       </Route>
       <Route path="/admin" element={<Admin />} />
     </Routes>

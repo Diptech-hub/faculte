@@ -1,0 +1,25 @@
+.shoppingCart {
+    padding: 30px 60px 20px;
+    margin-top: -5px;
+    color: white;
+    background: #034cdd;
+font-size: 36px;
+font-weight: 700;
+line-height: 68px;
+letter-spacing: -0.02em;
+text-align: left;
+
+}
+
+.cartBtm{
+    margin: 20px 60px;
+}
+
+.cartBtm > p{
+font-size: 16px;
+font-weight: 600;
+line-height: 40px;
+letter-spacing: -0.02em;
+text-align: left;
+padding: 20px 0;
+}
