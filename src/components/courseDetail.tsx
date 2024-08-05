@@ -55,6 +55,7 @@ const CourseDetails: React.FC = () => {
           title: selectedCourse.courseTitle,
           image: selectedCourse.courseImage,
           price: selectedCourse.discountPrice,
+          branch: selectedCourse.courseType,
         })
       );
       togglePopup();
