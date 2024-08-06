@@ -8,6 +8,7 @@ import { fetchFirestoreData } from "../features/fetch/courseList";
 import NavBar2 from "./navBar2";
 import Dropdown from "./dropdown";
 import Footer from "./footer";
+import SkeletonCourseItem from "./skeleton";
 import "../styles/result.css";
 import { LuContact2 } from "react-icons/lu";
 import { LiaSuitcaseSolid } from "react-icons/lia";
@@ -27,7 +28,7 @@ const Result: React.FC = () => {
   const { data, loading, error, lastDoc, hasMore, totalCount } = useSelector(
     (state: RootState) => state.firestore
   );
-  
+
   const pageSize = 20;
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -93,37 +94,42 @@ const Result: React.FC = () => {
           <p>{totalCount} Results Found</p>
         </div>
         <div className="resultData">
-          {loading && <p>Loading...</p>}
+          {loading &&
+            Array.from({ length: pageSize }).map((_, indexskel) => (
+              <SkeletonCourseItem key={indexskel} />
+            ))}
           {error && <p>Error: {error}</p>}
-          {data.map((doc: Course) => (
-            <div key={doc.id} className="courseItem">
-              <img
-                src={doc.courseImage}
-                alt={doc.courseTitle}
-                className="courseImage"
-              />
-              <div className="courseHead">
-                <Link to={`/items/${doc.id}`} className="courseTitle">
-                  {doc.courseTitle}
-                </Link>
-                <div className="courseHeadBody">
+          {!loading &&
+            !error &&
+            data.map((doc: Course) => (
+              <div key={doc.id} className="courseItem">
+                <img
+                  src={doc.courseImage}
+                  alt={doc.courseTitle}
+                  className="courseImage"
+                />
+                <div className="courseHead">
+                  <Link to={`/items/${doc.id}`} className="courseTitle">
+                    {doc.courseTitle}
+                  </Link>
+                  <div className="courseHeadBody">
+                    <p>
+                      <LiaSuitcaseSolid /> {doc.courseLevel}
+                    </p>
+                    <p>
+                      <LuContact2 /> {doc.learningType}
+                    </p>
+                  </div>
+                </div>
+                <div className="lineCard"></div>
+                <div className="courseCta">
                   <p>
-                    <LiaSuitcaseSolid /> {doc.courseLevel}
+                    #{doc.discountPrice} <span>/ one time fee</span>
                   </p>
-                  <p>
-                    <LuContact2 /> {doc.learningType}
-                  </p>
+                  <button className="cta">Add to Cart</button>
                 </div>
               </div>
-              <div className="lineCard"></div>
-              <div className="courseCta">
-                <p>
-                  #{doc.discountPrice} <span>/ one time fee</span>
-                </p>
-                <button className="cta">Add to Cart</button>
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
       <div className="paginationControls">
