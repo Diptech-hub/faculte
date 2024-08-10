@@ -27,6 +27,17 @@
   margin: 20px 0;
 }
 
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: grey;
+}
+
 .cartResult > img {
   width: 88px;
   height: 63px;

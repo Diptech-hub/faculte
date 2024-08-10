@@ -22,7 +22,7 @@ const Cart: React.FC = () => {
       <div className="cartt">
         <div className="cartBody">
           {cartItems.length === 0 ? (
-            <p>Your cart is empty</p>
+            <p className="emptyCart">Your cart is empty</p>
           ) : (
             <div className="cartFetch">
               {cartItems.map((item) => (

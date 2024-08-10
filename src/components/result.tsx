@@ -126,7 +126,9 @@ const Result: React.FC = () => {
                   <p>
                     #{doc.discountPrice} <span>/ one time fee</span>
                   </p>
-                  <button className="cta">Add to Cart</button>
+                  <Link to={`/items/${doc.id}`}>
+                    <button className="cta">Enroll</button>
+                  </Link>
                 </div>
               </div>
             ))}
