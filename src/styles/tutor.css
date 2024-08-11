@@ -11,8 +11,10 @@
 
 .square {
   background-color: #ffa200;
-  width: 254.17px;
-  height: 237.99px;
+  max-width: 100%;
+  width: 254px;
+  height: auto;
+  aspect-ratio: 1;
   margin-left: 120px;
 }
 
@@ -24,7 +26,8 @@
 }
 
 .tutor {
-  margin: 20px 300px 20px 40px;
+  margin: 20px;
+  padding: 0 20px;
 }
 
 .tutor p:first-child {
@@ -49,6 +52,10 @@
   text-align: left;
   background-color: #034cdd;
   color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .t-body2 {
@@ -64,29 +71,101 @@
   font-weight: bold;
   line-height: 44px;
   letter-spacing: 0.08em;
-  text-align: left;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .t-body2 p:nth-child(2) {
   font-size: 12px;
   font-weight: normal;
-  text-align: left;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .t-body3 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 20px;
 }
 
 .t-body3 img {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
 }
 
 .t-body3 img:nth-child(3),
 .t-body3 img:nth-child(2) {
-  margin-top: 35px;
+  margin-top: 50px;
   width: 100px;
   height: 20px;
+}
+
+@media (max-width: 768px) {
+  .t-body1 {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .square {
+    margin-left: 0;
+  }
+
+  .t-body1 img {
+    margin-left: -50px;
+  }
+
+  .tutor {
+    /* margin: 20px;
+    padding: 0; */
+    text-align: center;
+  }
+
+  .tutor p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .tutor p:nth-child(2) {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .t-body2 {
+    margin: 30px 10px;
+  }
+
+  .t-body2 p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .t-body2 p:nth-child(2) {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .t-body3 {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .t-body3 img:nth-child(3),
+  .t-body3 img:nth-child(2) {
+    margin-top: 0;
+  }
 }

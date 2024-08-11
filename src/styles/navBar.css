@@ -1,42 +1,120 @@
 .topBar {
   display: flex;
-  flex-direction: row;
   margin: 0;
-  padding: 15px 60px 15px 60px;
+  padding: 15px 60px;
   background: #034cdd;
   color: white;
 }
 
 .top-name {
   font-size: 12px;
-  font-weight: bolder;
+  font-weight: 700; 
   line-height: 29.3px;
 }
 
 .body {
   display: flex;
-  flex-direction: row;
   margin-left: auto;
 }
 
 .body a {
   margin-left: 30px;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 400; 
   line-height: 29.3px;
   text-decoration: none;
   color: white;
 }
 
 .signup {
-  padding: 4px 8px 4px 8px;
+  padding: 4px 8px;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.1px; 
   text-align: left;
   margin-left: 30px;
   background: white;
   color: #034cdd;
   outline: none;
+}
+
+.mobileBtn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .topBar {
+    padding: 15px 20px;
+  }
+
+  .body a {
+    display: none;
+  }
+
+  .top-name {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .mobileBtn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 10;
+  }
+
+  .mobileBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9;
+  }
+
+  .mobileBody a,
+  .mobileBody button {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .mobileBody button {
+    display: block;
+    margin: auto;
+    background: #034cdd;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobileBody .signup {
+    color: #034cdd;
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .mobileBtn.active + .mobileBody {
+    display: flex;
+  }
 }

@@ -20,10 +20,10 @@
 
 .top-hero .hero2 {
   font-size: 12px;
-  font-weight: noraml;
-  letter-spacing: -0.10000000149011612px;
+  font-weight: normal;
+  letter-spacing: -0.1px;
   text-align: center;
-  padding: 30px 320px 30px 320px;
+  padding: 30px 320px;
 }
 
 .hero-input {
@@ -61,4 +61,31 @@ button {
   display: block;
   margin: auto;
   top: 450px;
+}
+
+@media (max-width: 768px) {
+  .top-hero {
+    padding: 30px 20px;
+  }
+
+  .top-hero .hero1 {
+    font-size: 28px;
+    padding: 10px 20px;
+    line-height: 44px;
+  }
+
+  .top-hero .hero2 {
+    font-size: 14px;
+    padding: 20px;
+  }
+
+  .input1 {
+    padding: 8px 20px;
+  }
+
+  .top-hero img {
+    width: 450px;
+    height: 150px;
+    top: 500px;
+  }
 }

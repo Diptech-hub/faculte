@@ -1,20 +1,33 @@
-.header{
-    margin: 20px 60px;
+.header {
+  margin: 20px 5%;
 }
 
 .header p:first-child {
-font-size: 24px;
-font-weight: bold;
-letter-spacing: -0.01em;
-text-align: left;
-
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  text-align: left;
+  margin: 0;
 }
 
 .header p:last-child {
-font-size: 12px;
-font-weight: normal;
-line-height: 20px;
-letter-spacing: -0.10000000149011612px;
-text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  text-align: left;
+}
 
+@media (max-width: 768px) {
+  .header {
+    margin: 30px 30px 10px;
+  }
+
+  .header p:first-child {
+    font-size: 18px;
+  }
+
+  .header p:last-child {
+    font-size: 9.5px;
+  }
 }

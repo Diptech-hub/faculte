@@ -1,98 +1,144 @@
 .communityhead {
-    background: #034CDD33;
-    padding-bottom: 5px;
-  }
-  
+  background: #034cdd33;
+  padding-bottom: 5px;
+}
+
+.community {
+  margin: 60px;
+  margin-top: 100px;
+}
+
+.community p {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 60px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.community__body-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: white;
+  padding: 40px 0;
+}
+
+.community__body {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.community__body1 {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.community__body1 img {
+  width: 260px;
+  height: 260px;
+  border-radius: 10px;
+}
+
+.community__body1content {
+  margin: 10px 40px;
+  width: 600px;
+}
+
+.community__body1content p:first-child {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 42px;
+  letter-spacing: -0.01em;
+  text-align: left;
+  color: #034cdd;
+}
+
+.community__body1content .text {
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 24px;
+  letter-spacing: -0.10000000149011612px;
+  text-align: left;
+  margin-top: -30px;
+}
+
+.community__body1content p:last-child {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buttons__carousel {
+  color: #034cdd;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: none;
+}
+
+.carouselIcon {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
   .community {
-    margin: 60px;
-    margin-top: 100px;
-  }
-  
-  .community p {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 60px;
-    letter-spacing: -0.01em;
-    text-align: left;
-    padding: 10px 0;
-  }
-  
-  .community__body-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    background: white;
-    padding: 40px 0;
-  }
-  
-  .community__body {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-  }
-  
-  .community__body1 {
-    min-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  
-  .community__body1 img {
-    width: 260px;
-    height: 260px;
-    border-radius: 10px;
-  }
-  
-  .community__body1content {
-    margin: 10px 40px;
-    width: 600px;
-  }
-  
-  .community__body1content p:first-child {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 42px;
-    letter-spacing: -0.01em;
-    text-align: left;
-    color: #034CDD;
-  }
-  
-  .community__body1content .text {
-    font-size: 10px;
-    font-weight: normal;
-    line-height: 24px;
-    letter-spacing: -0.10000000149011612px;
-    text-align: left;
-    margin-top: -30px;
-  }
-  
-  .community__body1content p:last-child {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 40px;
-    letter-spacing: -0.02em;
-    text-align: left;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .buttons__carousel {
-    color: #034CDD;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    background: none;
+    margin: 30px;
+    margin-top: 60px;
   }
 
-  .carouselIcon {
-    width: 30px;
-    height: 30px;
+  .community p {
+    font-size: 18px;
+    line-height: 50px;
   }
-  
-  
+
+  .community__body1content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .community__body1 {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+  }
+
+  .community__body1content p:first-child {
+    font-size: 14px;
+    line-height: 0;
+    display: block;
+    margin: auto;
+  }
+
+  .community__body1content .text {
+    font-size: 10px;
+    display: block;
+    margin: auto;
+  }
+
+  .community__body1content p:last-child {
+    font-size: 10px;
+    line-height: 16px;
+    padding: 0 16px;
+  }
+
+  .community__body1 img {
+    width: 100px;
+    height: 100px;
+  }
+}
