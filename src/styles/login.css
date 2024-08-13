@@ -195,6 +195,7 @@ margin-bottom: 5px;
 
   .loginBody {
     width: 80%;
+    margin: 10px auto;
   }
 
   .loginHead p {
@@ -204,6 +205,7 @@ margin-bottom: 5px;
 
   .join{
     font-size: 14px;
+    margin: 20px auto;
   }
 
   .loginContent label {
