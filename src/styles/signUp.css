@@ -50,6 +50,7 @@
   padding: 8px;
   border-radius: 6px;
   margin-bottom: 10px;
+  font-size: 10px;
 }
 
 .signupContent input::placeholder {
@@ -157,6 +158,11 @@
   .signupHead p {
     text-align: left;
     font-size: 24px;
+  }
+
+  .signupContent input {
+    font-size: 14px; 
+    padding: 10px; 
   }
 
   .join {
