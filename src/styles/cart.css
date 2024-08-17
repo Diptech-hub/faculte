@@ -81,7 +81,7 @@
   font-size: 10px;
   font-weight: 400;
   line-height: 15.4px;
-  letter-spacing: -0.07699999958276749px;
+  letter-spacing: -0.08px;
   text-align: left;
 }
 
@@ -133,14 +133,14 @@
 }
 
 .promo > input {
-  width: Fill (200px) px;
-  padding: 12.5px 16.67px 12.5px 16.67px;
-  gap: 8.34px;
+  /* width: Fill (200px) px; */
+  width: 200px;
+  padding: 12.5px 16.67px;
   border-radius: 6px;
   border: 1px;
   opacity: 0px;
   border: 1.04px solid #dae0e6;
-  box-shadow: 0px 1.04px 2.08px 0px #1018280a;
+  box-shadow: 0px 1px 2px 0px #1018280a;
 }
 
 .promo > span {
@@ -158,4 +158,57 @@
   letter-spacing: -0.02em;
   text-align: left;
   padding: 20px 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .cartt {
+    flex-direction: column;
+    margin: 30px 20px;
+  }
+
+  .shoppingCart {
+    font-size: 24px;
+    line-height: 40px;
+    padding: 20px;
+  }
+
+  .cartResult {
+    margin: 10px 0;
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .cartResult > img {
+    width: 70px;
+    height: 50px;
+  }
+
+  .cartTit p:nth-child(2) {
+    font-size: 9px;
+    width: 80px;
+  }
+
+  .cartTit2 > button {
+    font-size: 9px;
+  }
+
+  .cartTotal > button,
+  .promo > button {
+    width: 150px;
+    font-size: 9px;
+  }
+
+  .promo > input {
+    width: 100%;
+  }
+
+  .cartBtm {
+    margin: 20px 20px;
+  }
+
+  .cartBtm > p {
+    font-size: 14px;
+    line-height: 30px;
+  }
 }

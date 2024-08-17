@@ -47,10 +47,10 @@
   width: 100%;
   border: 1px solid #dae0e6;
   box-shadow: 0px 1px 2px 0px #1018280a;
-  padding: 8px;
+  padding: 12px;
   border-radius: 6px;
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .loginContent input::placeholder {
@@ -205,8 +205,8 @@
   }
 
   .loginContent input {
-    font-size: 14px; 
-    padding: 10px; 
+    font-size: 12px; 
+    padding: 14px; 
   }
 
   .join {

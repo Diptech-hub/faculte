@@ -26,7 +26,7 @@
 }
 
 .courseDetails_body1 {
-  width: 750px;
+  flex: 1;
   margin-right: 60px;
 }
 
@@ -51,6 +51,7 @@
   width: 120px;
   text-align: center;
   margin: 0 0 20px 0;
+  opacity: 1;
 }
 
 .courseDetails_body1HeadList {
@@ -86,15 +87,14 @@
   color: #272d37;
   padding: 4.86px 12.14px;
   border-radius: 6px;
-  opacity: 0px;
+  opacity: 1;
   background: #034cdd33;
   margin-left: 20px;
 }
 
 video {
   border-radius: 10px;
-  width: 750px;
-  opacity: 0px;
+  width: 100%;
   color: #ffa200;
 }
 
@@ -249,7 +249,7 @@ video {
   font-weight: 400;
   letter-spacing: -0.1px;
   text-align: center;
-  width: 250px;
+  width: 100%;
 }
 
 .coursePrice button:nth-of-type(2) {
@@ -300,8 +300,8 @@ video {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
-  width: 100%;
+  max-width: 100%;
+  width: 50%;
   text-align: center;
 }
 
@@ -322,7 +322,7 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.2px;
   text-align: left;
   outline-color: #828282;
 }
@@ -341,7 +341,7 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.2px;
   text-align: center;
 }
 
@@ -369,8 +369,84 @@ video {
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: -0.10000000149011612px;
+  letter-spacing: -0.2px;
   text-align: left;
   margin-top: 5px;
   outline-color: #828282;
+}
+
+
+@media screen and (max-width: 768px) {
+  .courseDetails_top {
+    padding: 20px 30px;
+  }
+
+  .courseDetails_top > p {
+    margin: 20px 0;
+  }
+
+  .courseDetails_body {
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+
+  .courseDetails_body1,
+  .courseDetails_body2 {
+    width: 100%;
+    margin-right: 0;
+    padding: 10px 0;
+  }
+
+  .courseDetails_body1Head h1 {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  .courseDetails_overview,
+  .courseDetails_learn,
+  .courseDetails_requirements {
+    padding: 15px 20px;
+    margin: 20px 0;
+  }
+
+  .courseDetails_body1HeadList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .courseDetails_body2 {
+    padding: 20px;
+    margin: 30px 0;
+    width: 87%;
+  }
+
+  .coursePrice > button,
+  .popup-inner .innerBtn {
+    width: 100%;
+  }
+
+  .popup-inner {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .popup-innerBody {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-innerBody img {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .popup-innerBody p,
+  .popup-innerBody span {
+    text-align: center;
+    padding-left: 0;
+  }
 }

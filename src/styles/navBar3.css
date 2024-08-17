@@ -2,24 +2,24 @@
   display: flex;
   flex-direction: row;
   margin: 0;
-  padding: 15px 60px 15px 60px;
+  padding: 15px 60px;
   background: #034cdd;
   color: white;
 }
 
 .topBar3_input {
-  width: 287px;
+  width: 100%;
+  max-width: 287px;
   height: 40px;
-  gap: 0px;
   border-radius: 20px;
   border: 1px solid #989696;
   padding: 0 20px;
-  margin-left: 200px;
+  margin-left: auto;
 }
 
 .top-name {
   font-size: 12px;
-  font-weight: bolder;
+  font-weight: 700;
   line-height: 29.3px;
 }
 
@@ -32,7 +32,7 @@
 .body a {
   margin-left: 30px;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 400;
   text-decoration: none;
   color: white;
 }
@@ -57,16 +57,85 @@
   margin: 0;
   color: #034cdd;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 400;
   line-height: 29.3px;
 }
 
 .hover-content button {
   padding: 5px 10px;
-  border: 8px;
+  border: none;
   background-color: #034cdd;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 400;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .topBar3 {
+    flex-direction: row;
+    padding: 10px 20px;
+  }
+
+  .body a {
+    display: none;
+  }
+
+  .top-name {
+    font-size: 18px;
+  }
+
+  .topBar3_input {
+    max-width: 50%;
+    margin: 0 20px;
+  }
+
+  .mobileBtn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 200;
+  }
+
+  .mobilebody2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9;
+  }
+
+  .mobilebody2 a {
+    margin: 8px 0;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .account-container {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .hover-content {
+    position: relative;
+    top: 10px;
+    right: 0;
+    width: 100%;
+    max-width: 250px;
+  } */
 }
