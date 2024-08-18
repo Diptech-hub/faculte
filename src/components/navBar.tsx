@@ -23,9 +23,11 @@ const NavBar: React.FC = () => {
           <a href="">Categories</a>
           <a href="">For Schools</a>
           <a href="">Teach</a>
-          <a href="">
-            <LuShoppingCart />
-          </a>
+          <Link to="/cart">
+            <a href="">
+              <LuShoppingCart />
+            </a>
+          </Link>
           <Link to="/login">
             <a href="">Login</a>
           </Link>
@@ -38,9 +40,11 @@ const NavBar: React.FC = () => {
         <a href="">Categories</a>
         <a href="">For Schools</a>
         <a href="">Teach</a>
-        <a href="">
-          <LuShoppingCart />
-        </a>
+        <Link to="/cart">
+          <a href="">
+            <LuShoppingCart />
+          </a>
+        </Link>
         <Link to="/login">
           <a href="">Login</a>
         </Link>

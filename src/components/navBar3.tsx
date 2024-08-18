@@ -58,9 +58,11 @@ const NavBar3: React.FC = () => {
           <a href="">Categories</a>
           <a href="">For Schools</a>
           <a href="">Teach</a>
-          <a href="">
-            <LuShoppingCart />
-          </a>
+          <Link to="/cart">
+            <a href="">
+              <LuShoppingCart />
+            </a>
+          </Link>
           <a href="">
             <MdOutlineNotificationAdd />
           </a>
@@ -87,9 +89,11 @@ const NavBar3: React.FC = () => {
         <a href="">Categories</a>
         <a href="">For Schools</a>
         <a href="">Teach</a>
-        <a href="">
-          <LuShoppingCart />
-        </a>
+        <Link to="/cart">
+          <a href="">
+            <LuShoppingCart />
+          </a>
+        </Link>
         <a href="">
           <MdOutlineNotificationAdd />
         </a>
