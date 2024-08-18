@@ -20,17 +20,19 @@ interface Course {
   courseLevel: string;
   learningType: string;
   discountPrice: number;
-  id: string; // Ensure the id is part of the Course interface
+  id: string;
 }
 
 const Result: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error, lastDoc, hasMore, totalCount } = useSelector(
+  const { data, loading, error, lastDoc, hasMore } = useSelector(
     (state: RootState) => state.firestore
   );
 
   const pageSize = 20;
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedOption, setSelectedOption] = useState<string>("");
 
   useEffect(() => {
     dispatch(
@@ -62,11 +64,36 @@ const Result: React.FC = () => {
     }
   };
 
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleDropdownSelect = (value: string) => {
+    setSelectedOption(value);
+  };
+
+  // Dropdown options, including an option to show all results
   const options = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
+    { value: "", label: "All Levels" },
+    { value: "Beginner", label: "Beginner" },
+    { value: "Intermediate", label: "Intermediate" },
+    { value: "Advanced", label: "Advanced" },
   ];
+
+  // Filtering logic
+  const filteredData = data.filter((course: Course) => {
+    const matchesSearchQuery = course.courseTitle
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+
+    const matchesDropdown =
+      selectedOption === "" || course.courseLevel === selectedOption;
+
+    return matchesSearchQuery && matchesDropdown;
+  });
+
+  // Count the number of filtered results
+  const displayedResultsCount = filteredData.length;
 
   return (
     <div className="resultContent">
@@ -81,9 +108,15 @@ const Result: React.FC = () => {
         <input
           className="resultSearch_input"
           type="text"
-          placeholder="UX Design"
+          placeholder="Search by Course Title"
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
-        <Dropdown options={options} onSelect={() => {}} placeholder="Choose" />
+        <Dropdown
+          options={options}
+          onSelect={handleDropdownSelect}
+          placeholder="Choose Level"
+        />
         <button className="resultSearch_button">Submit</button>
         <button className="resultSearch_filter">
           <TbAdjustmentsHorizontal />
@@ -91,7 +124,7 @@ const Result: React.FC = () => {
       </div>
       <div className="resultDataWrapper">
         <div className="totalCount">
-          <p>{totalCount} Results Found</p>
+          <p>{displayedResultsCount} Results Found</p>
         </div>
         <div className="resultData">
           {loading &&
@@ -99,9 +132,12 @@ const Result: React.FC = () => {
               <SkeletonCourseItem key={indexskel} />
             ))}
           {error && <p>Error: {error}</p>}
+          {!loading && !error && filteredData.length === 0 && (
+            <p>No results found</p>
+          )}
           {!loading &&
             !error &&
-            data.map((doc: Course) => (
+            filteredData.map((doc: Course) => (
               <div key={doc.id} className="courseItem">
                 <img
                   src={doc.courseImage}

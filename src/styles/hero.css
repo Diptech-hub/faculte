@@ -86,6 +86,6 @@ button {
   .top-hero img {
     width: 380px;
     height: 100px;
-    top: 600px;
+    margin-top: 120px;
   }
 }
