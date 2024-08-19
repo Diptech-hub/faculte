@@ -76,9 +76,47 @@
   background-color: #030cdd;
 }
 
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .adminDetails {
+    max-width: 80%;
+  }
+
+  .admin {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .adminDetails {
+    max-width: 90%;
+  }
+
+  .admin {
+    font-size: 1.3rem;
+  }
+
+  .adminDetails input[type="text"],
+  .adminDetails input[type="date"],
+  .adminDetails input[type="file"],
+  .adminDetails input[type="number"],
+  .adminDetails select {
+    font-size: 15px;
+  }
+
+  .adminDetails button[type="submit"] {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 600px) {
   .adminDetails {
     padding: 10px;
+    max-width: 95%;
+  }
+
+  .admin {
+    font-size: 1.2rem;
   }
 
   .adminDetails input[type="text"],
@@ -87,5 +125,34 @@
   .adminDetails input[type="number"],
   .adminDetails select {
     width: calc(100% - 14px);
+    font-size: 14px;
+  }
+
+  .adminDetails button[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminDetails {
+    padding: 8px;
+    max-width: 100%;
+  }
+
+  .admin {
+    font-size: 1.1rem;
+  }
+
+  .adminDetails input[type="text"],
+  .adminDetails input[type="date"],
+  .adminDetails input[type="file"],
+  .adminDetails input[type="number"],
+  .adminDetails select {
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+
+  .adminDetails button[type="submit"] {
+    font-size: 13px;
   }
 }

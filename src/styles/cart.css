@@ -133,7 +133,6 @@
 }
 
 .promo > input {
-  /* width: Fill (200px) px; */
   width: 200px;
   padding: 12.5px 16.67px;
   border-radius: 6px;
@@ -212,3 +211,5 @@
     line-height: 30px;
   }
 }
+
+
